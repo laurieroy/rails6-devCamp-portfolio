@@ -44,6 +44,8 @@ group :development do
   gem 'spring'
 end
 
+gem 'friendly_id', '~> 5.4.0'
+
 gem 'net-imap', require: false
 gem 'net-pop', require: false
 gem 'net-smtp', require: false
