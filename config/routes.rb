@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :blogs
   resources :portfolios
 
-  get 'pages/about'
-  get 'pages/contact'
+  get 'about', to: 'pages#about'
+  get 'contact', to:'pages#contact'
   
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
