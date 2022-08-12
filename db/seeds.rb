@@ -8,7 +8,7 @@
 # Topic.create!("Ruby Programming")
 # Topic.create!("Software Engineering")
 3.times do |topic|
-  Topic.create!("Topic #{topic}")
+  Topic.create!(title: "Topic #{topic}")
 end
 
 puts "3 topics created"
