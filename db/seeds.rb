@@ -5,10 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Topic.create!("Ruby Programming")
+Topic.create!("Software Engineering")
+puts "2 topics created"
+
 10.times do |blog|
   Blog.create!(
     title: "My Blog Post #{blog}",
-    body: "Since EOS returns some ledger, Maker managed many efficient algorithm of many volume! Dogecoin counted lots of private chain, or Tezos could be many FOMO of a stablecoin. Zilliqa cut off many FOMO behind lots of unconfirmed because Satoshi Nakamoto cost lots of constant ERC721 token standard during a circulating supply."
+    body: "Since EOS returns some ledger, Maker managed many efficient algorithm of many volume! Dogecoin counted lots of private chain, or Tezos could be many FOMO of a stablecoin. Zilliqa cut off many FOMO behind lots of unconfirmed because Satoshi Nakamoto cost lots of constant ERC721 token standard during a circulating supply.",
+    topic_id: Topic.first.id
   )
 end
 
