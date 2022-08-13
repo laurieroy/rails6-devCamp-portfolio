@@ -52,4 +52,20 @@ puts "8 portfolios created"
     thumb_image:  "https://via.placeholder.com/350x200"
   )
 end
+
 puts "1 portfolio created"
+
+3.times do |technology| 
+  Technology.create!(
+    name: "Technology #{technology}",
+    portfolio_id: Portfolio.first.id
+  )
+end
+
+puts "3 technologies created"
+
+3.times do |technology| 
+  Portfolio.last.technologies.create!(name: "Technology #{technology}" )
+end
+
+puts "3 technologies created"
