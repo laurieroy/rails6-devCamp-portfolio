@@ -5,10 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# Topic.create!("Ruby Programming")
+# Topic.create!("Software Engineering")
+3.times do |topic|
+  Topic.create!(title: "Topic #{topic}")
+end
+
+puts "3 topics created"
+
 10.times do |blog|
   Blog.create!(
     title: "My Blog Post #{blog}",
-    body: "Since EOS returns some ledger, Maker managed many efficient algorithm of many volume! Dogecoin counted lots of private chain, or Tezos could be many FOMO of a stablecoin. Zilliqa cut off many FOMO behind lots of unconfirmed because Satoshi Nakamoto cost lots of constant ERC721 token standard during a circulating supply."
+    body: "Since EOS returns some ledger, Maker managed many efficient algorithm of many volume! Dogecoin counted lots of private chain, or Tezos could be many FOMO of a stablecoin. Zilliqa cut off many FOMO behind lots of unconfirmed because Satoshi Nakamoto cost lots of constant ERC721 token standard during a circulating supply.",
+    topic_id: Topic.first.id
   )
 end
 
@@ -23,13 +32,40 @@ end
 
 puts "5 skills created"
 
-9.times do |pi|
+8.times do |pi|
   Portfolio.create!(
     title: "Portfolio title: #{pi}",
-    subtitle: "My great service",
+    subtitle: "Ruby on Rails",
     body: "TRON controls few efficient bubble after the whitepaper! Bitcoin built lots of genesis block behind few atomic swap when Ravencoin broadcast lots of amazing distributed ledger. Because VeChain allowed many pre-mine, OmiseGo cooperated lots of immutable ashdraked, however, since Nexo forgot lots of minimum digital signature, IPO thought the coin at a public key!",
     main_image: "https://via.placeholder.com/600x400",
     thumb_image:  "https://via.placeholder.com/350x200"
   )
 end
-puts "9 portfolios created"
+puts "8 portfolios created"
+
+1.times do |pi|
+  Portfolio.create!(
+    title: "Portfolio title: #{pi}",
+    subtitle: "React",
+    body: "TRON controls few efficient bubble after the whitepaper! Bitcoin built lots of genesis block behind few atomic swap when Ravencoin broadcast lots of amazing distributed ledger. Because VeChain allowed many pre-mine, OmiseGo cooperated lots of immutable ashdraked, however, since Nexo forgot lots of minimum digital signature, IPO thought the coin at a public key!",
+    main_image: "https://via.placeholder.com/600x400",
+    thumb_image:  "https://via.placeholder.com/350x200"
+  )
+end
+
+puts "1 portfolio created"
+
+3.times do |technology| 
+  Technology.create!(
+    name: "Technology #{technology}",
+    portfolio_id: Portfolio.first.id
+  )
+end
+
+puts "3 technologies created"
+
+3.times do |technology| 
+  Portfolio.last.technologies.create!(name: "Technology #{technology}" )
+end
+
+puts "3 technologies created"
